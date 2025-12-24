@@ -8,6 +8,7 @@ public class AdminController {
 	
 	@RequestMapping("/")
 	public String preLogin() {
+		System.out.println();
 		
 		return "login";
 		
