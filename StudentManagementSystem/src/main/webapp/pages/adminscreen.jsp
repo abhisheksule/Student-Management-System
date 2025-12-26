@@ -115,18 +115,18 @@ name="StudentAge"/>
                   <h6 class="mb-2 pb-1">Student Course : </h6> 
  
                   <div class="form-check form-check-inline"> 
-  <input class="form-check-input" type="radio" name="StudentCourse" id="java" value="Java" 
+  <input class="form-check-input" type="radio" name="studentCourse" id="java" value="Java" 
 checked /> 
                     <label class="form-check-label" for="java">Java</label> 
                   </div> 
  
                   <div class="form-check form-check-inline"> 
-  <input class="form-check-input" type="radio" name="StudentCourse" id="python" value="Python" /> 
+  <input class="form-check-input" type="radio" name="studentCourse" id="python" value="Python" /> 
                     <label class="form-check-label" for="python">Python</label> 
                   </div> 
  
                   <div class="form-check form-check-inline"> 
- <input class="form-check-input" type="radio" name="StudentCourse" id="testing" value="Testing" 
+ <input class="form-check-input" type="radio" name="studentCourse" id="testing" value="Testing" 
 /> 
                     <label class="form-check-label" for="testing">Testing</label> 
                   </div> 
