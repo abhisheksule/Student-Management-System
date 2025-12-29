@@ -1,5 +1,7 @@
 package edu.cjc.sms.app.serviceimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +12,6 @@ import edu.cjc.sms.app.servicei.StudentServiceI;
 @Service
 public class StudentServiceImpl implements StudentServiceI {
 	
-	
-	
-	
 	@Autowired
 	StudentRepositary sr;
 	@Override
@@ -21,6 +20,22 @@ public class StudentServiceImpl implements StudentServiceI {
 			sr.save(s);
 	
 		
+	}
+	@Override
+	public List<Student> getAllStudent() {
+		
+		return sr.findAll();
+	}
+	@Override
+	public void deleteStudent(int rollno) {
+		sr.deleteById(rollno);
+	
+		
+	}
+	@Override
+	public List<Student> searchStudentByBatch(String batchNumber) {
+		
+		return sr.findAllByBatchNumber(batchNumber);
 	}
 
 }

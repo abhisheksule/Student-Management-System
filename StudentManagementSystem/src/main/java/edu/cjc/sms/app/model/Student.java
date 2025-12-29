@@ -9,27 +9,29 @@ import jakarta.persistence.Id;
 public class Student {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int studentId;
-	private String name;
+	private String studentFullName;
 	private String studentEmail;
-	private int age;
-	private String studentCollegeName;
+	private int studentAge;
+	private String studentCollageName;
 	private String studentCourse;
 	private String batchNumber;
 	private String batchMode;
 	private String feesPaid;
+	
+	
 	public int getStudentId() {
 		return studentId;
 	}
 	public void setStudentId(int studentId) {
 		this.studentId = studentId;
 	}
-	public String getName() {
-		return name;
+	public String getStudentFullName() {
+		return studentFullName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setStudentFullName(String studentFullName) {
+		this.studentFullName = studentFullName;
 	}
 	public String getStudentEmail() {
 		return studentEmail;
@@ -37,17 +39,17 @@ public class Student {
 	public void setStudentEmail(String studentEmail) {
 		this.studentEmail = studentEmail;
 	}
-	public int getAge() {
-		return age;
+	public int getStudentAge() {
+		return studentAge;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	public void setStudentAge(int studentAge) {
+		this.studentAge = studentAge;
 	}
-	public String getStudentCollegeName() {
-		return studentCollegeName;
+	public String getStudentCollageName() {
+		return studentCollageName;
 	}
-	public void setStudentCollegeName(String studentCollegeName) {
-		this.studentCollegeName = studentCollegeName;
+	public void setStudentCollageName(String studentCollageName) {
+		this.studentCollageName = studentCollageName;
 	}
 	public String getStudentCourse() {
 		return studentCourse;
@@ -73,6 +75,7 @@ public class Student {
 	public void setFeesPaid(String feesPaid) {
 		this.feesPaid = feesPaid;
 	}
+	
 	
 
 }

@@ -1,5 +1,7 @@
 package edu.cjc.sms.app.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +29,8 @@ public class AdminController {
 	{
 		if(username.equals("admin") && password.equals("admin123"))
 		{
+			List<Student> list = ssi.getAllStudent();
+			m.addAttribute("data", list);
 			return "adminscreen";
 		}
 		else {
@@ -36,13 +40,47 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/enroll_student")
-	public String saveStudentDetails(@ModelAttribute Student s)
+	public String saveStudentDetails(@ModelAttribute Student s ,Model m)
 	{
 		
 		ssi.saveStudentData(s);
+		List<Student> list = ssi.getAllStudent();
+		m.addAttribute("data", list);
 		return "adminscreen";
 		
 	}
+	
+	@RequestMapping("/delete")
+	public String removeStudent(@RequestParam("rollno") int rollno,Model m ) {
+		
+		ssi.deleteStudent(rollno);
+		List<Student> list = ssi.getAllStudent();
+		m.addAttribute("data", list);
+		return "adminscreen";
+		
+	}
+	
+	@RequestMapping("/search")
+	public String getStudentBatch(@RequestParam("batchNumber") String batchNumber,Model m) {
+		
+		List<Student> result=ssi.searchStudentByBatch(batchNumber);
+		if(result.size()>0)
+		{
+			m.addAttribute("data",result);
+		}
+		else {
+				List<Student> list = ssi.getAllStudent();
+				m.addAttribute("data", list);
+				m.addAttribute("message","No record found for the Batch "+batchNumber);
+				
+		}
+		
+
+		return "adminscreen";
+		
+	}
+	
+	
 	
 	
 }
