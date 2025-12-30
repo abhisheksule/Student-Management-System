@@ -14,20 +14,20 @@ kc2MPK8M2HN" crossorigin="anonymous">
 
 <style type="text/css"> 
    .enroll{ 
-   background-image: url("images/download.jpg"); 
+   background-image: url("images/download (3).jpg"); 
    background-size: cover; 
    background-repeat: no-repeat; 
    } 
    .heading{ 
      font-family:cursive; 
     text-align: center; 
-    margin-bottom: 20px; 
+    margin-bottom: 50px; 
    } 
    form{ 
    width:400px 
    } 
    .view{ 
-      background-image: url("images/images.jpg"); 
+      background-image: url("images/image.jpg"); 
    background-size: cover; 
    background-repeat: no-repeat; 
    } 
@@ -57,7 +57,7 @@ kc2MPK8M2HN" crossorigin="anonymous">
 
 	<section class="vh-100 gradient-custom enroll mt-2"  id="enroll"> 
   <div class="container  h-100"> 
-    <div class="row justify-content-center h-75 w-75"> 
+    <div class="row justify-content-center h-100 w-75"> 
       <div class="col-12 col-lg-9 col-xl-7"> 
         <div class="card shadow-2-strong card-registration mt-0" style="border-radius: 15px;"> 
           <div class="card-body mt-0"> 
@@ -138,7 +138,7 @@ checked />
               <div class="row"> 
                 <div class="col"> 
  
-                  <select class="select form-control-sm" name="batchMode"> 
+                  <select class="select form-control-sm border border-primary" name="batchMode"> 
                     <option value="#" disabled >Select Batch Mode</option> 
                     <option value="Online">Online</option> 
                     <option value="Offline">Offline</option> 
@@ -200,6 +200,16 @@ checked />
                     <option value="FDJ-165">FDJ-165</option> 
                     <option value="REG-165">REG-165</option> 
    				</select>
+   				
+   				<select class="select from-control-sm border border-primary" name="batchMode">
+     
+     	 			<option value="#" selected>Select Batch mode</option> 
+     	  			<option value="Online">ONLINE</option> 
+                    <option value="Offline">OFFLINE</option> 
+                    
+                    
+   				</select>
+   				
    				<button class="btn btn-outline-primary mb-1">Search</button>
     	 </form>
     	 <marquee>
@@ -244,9 +254,10 @@ checked />
            <td> 
   
            <div class="btn-group btn-group-sm" role="group" aria-label="..."> 
-           <button class="btn btn-outline-success">PayFees</button> 
+           <a href="fees?rollno=${s.studentId}" class="btn btn-outline-success">PayFees</a> 
              <button class="btn btn-outline-primary">ShiftBatch</button> 
            <a class="btn btn-outline-danger" href="delete?rollno=${s.studentId}">Remove</a> 
+            <a class="btn btn-outline-update" href="edit?rollno=${s.studentId}">Edit</a> 
             
            </div> 
              
